@@ -1,0 +1,57 @@
+{
+  "prefixPath": "assets/img/zt/12-25/hsq-12-",
+  "banners": [
+    "25_101.jpg",
+    "25_102.jpg",
+    "25_103.jpg"
+  ],
+  "type": "day",
+  "tabs": [
+    "12/22",
+    "12/23",
+    "12/24",
+    "12/25"
+  ],
+  "tabsImg": [
+    {
+      "url": "22.jpg",
+      "id": "6335"
+    },
+    {
+      "url": "23.jpg",
+      "id": "6322"
+    },
+    {
+      "url": "24.jpg",
+      "id": "6320"
+    },
+    {
+      "url": "25.jpg",
+      "id": "6321"
+    }
+  ],
+  "switchTitBg": "assets/img/zt/12-25/hsq-tab-tit.jpg",
+  "curIndex": 0,
+  "countDownDay": "2017/12/25",
+  "switchTime": 0,
+  "getCouponUrl": "javascript:tpBridge.getCoupon('sdzxqcq')",
+  "tabImgBoxClass": "tab-img-box",
+  "tabBtnClass": "switch-item",
+  "ztTplName": "#tpl_shengdan_box",
+  "shareInfo": {
+    "title": "圣诞好食光，零食天天秒！",
+    "content": "低至0.1元~吃货福利！每天12点 准点秒杀！图片稍后设计给到",
+    "thumbnail": "share.jpg",
+    "link": ""
+  },
+  "jumpUrl": function(data){
+    if(!data) return;
+    return 'couple_detail?pinactivitiesid=' + data;
+  },
+  "renderAfter": function(scope){
+    var $box = scope.$el.find('.coupon-btn');
+    var link = $box.data('link');
+    $box.removeAttr('data-link');
+    $box.wrap('<a href="' + link + '"></a>');
+  },
+}
