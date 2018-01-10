@@ -1,0 +1,199 @@
+{
+  "note": "2018元旦专题",
+  "data": [
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-01.jpg",
+          "id": 1208,
+          "type": "couple_detail"
+        }
+      ]
+    },
+    {
+      "template": "<div class='zt-banner'><%=data.sss%></div>",
+      "data":{
+        "sss":"何家胜"
+      }
+    },
+    {
+      "layout_type": "coupon",
+      "note": "优惠券布局，根据list张数确定几列",
+      "list": [
+        {
+          "path": "./img/banner-01.jpg",
+          "id": 1208,
+          "type": "coupon"
+        },
+        {
+          "path": "./img/banner-01.jpg",
+          "id": 1208,
+          "type": "couple_detail"
+        }
+      ]
+    },
+    {
+      "layout_type": "column_list",
+      "layout_item_class":"layout_item_class",
+      "layout_class":"layout_class",
+      "note": "商品两列布局，自动往下平铺",
+      "list": [
+        {
+          "path":"./img/banner-02.jpg",
+          "title": "新年好食光，1分钱抢零食！",
+          "price": "59",
+          "market_price": 60,
+          "id": 4751,
+          "type": "couple_detail",
+          "sku_id": 20528
+        },
+        {
+          "path":"./img/banner-02.jpg",
+          "title": "新年好食光，1分钱抢零食！",
+          "price": "59",
+          "market_price": 60,
+          "id": 4751,
+          "type": "couple_detail",
+          "sku_id": 20528
+        },
+        {
+          "path":"./img/banner-02.jpg",
+          "title": "新年好食光，1分钱抢零食！",
+          "price": "59",
+          "market_price": 60,
+          "id": 4751,
+          "type": "couple_detail",
+          "sku_id": 20528
+        },
+        {
+          "path":"./img/banner-02.jpg",
+          "title": "新年好食光，1分钱抢零食！",
+          "price": "59",
+          "market_price": 60,
+          "id": 4751,
+          "type": "couple_detail",
+          "sku_id": 20528
+        }
+      ]
+    },
+    {
+      "layout_type": "tabs",
+      "tab_list": [
+        {
+          "date":"12.28"
+        },
+        {
+          "date":"12.29"
+        },
+        {
+          "date":"12.30"
+        },
+        {
+          "date":"12.31"
+        },
+        {
+          "date":"1.1",
+          "year": "2018"
+        },
+        {
+          "date":"1.2",
+          "year": 2018
+        }
+      ],
+      "img_list": [
+        {
+          "p_img_list": [
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            },
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            }
+          ]
+        },
+        {
+          "p_img_list": [
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            }
+          ]
+        },
+        {
+          "p_img_list": [
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            },
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            }
+          ]
+        },
+        {
+          "p_img_list": [
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            },
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            },
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            },
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            }
+          ]
+        },
+        {
+          "p_img_list": [
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            }
+          ]
+        },
+        {
+          "p_img_list": [
+            {"path": "./img/hsq-12-28.jpg",
+              "id": "916ddb8f2980019d902b0f5904a8a9ef",
+              "type": "zt_template"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-01.jpg",
+          "id": 1208,
+          "type": "couple_detail"
+        }
+      ]
+    }
+  ],
+  "type": "day",
+  "styleText": ".zt_active_style .zt-tab-box{top: 1%;color:#f7e2a7;}.zt_active_style .zt-tab-box .current{background:none;color:#fddb3b;font-size:18px;font-weight:bold;}@media screen and (max-width: 375px) {.zt_active_style .zt-tab-box .current{font-size: 15px;}}",
+  "switchTitBg": "./img/tab-tit-bg.jpg",
+  "curIndex": 0,
+  "countDownDay": "2017/12/25",
+  "switchTime": 0,
+  "shareInfo": {
+    "title": "新年好食光，1分钱抢零食！",
+    "desc": "8元无门槛礼券等你拿，快来剁手！",
+    "imgUrl": "./img/share.jpg"
+  }
+}

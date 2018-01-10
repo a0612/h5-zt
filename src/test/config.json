@@ -1,0 +1,73 @@
+{
+  "banners": [
+    {
+      "path":"./img/banner-1.jpg",
+      "id": "",
+      "type": ""
+    },
+    {
+      "path":"./img/banner-2.jpg",
+      "id": "",
+      "type": ""
+    }
+  ],
+  "type": "day",
+  "tabs": [
+    {
+      "date":"1/11"
+    },
+    {
+      "date":"1/12"
+    },
+    {
+      "date":"1/13"
+    },
+    {
+      "date":"1/14"
+    },
+    {
+      "date":"1/15",
+    }
+  ],
+  "tabsImg": [
+    {
+      "path": "./img/tab-01.jpg",
+      "id": "23037",
+      "type": "detail"
+    },
+    {
+      "path": "./img/tab-02.jpg",
+      "id": "23061",
+      "type": "detail"
+    },
+    {
+      "path": "./img/tab-03.jpg",
+      "id": "22324",
+      "type": "detail"
+    },
+    {
+      "path": "./img/tab-04.jpg",
+      "id": "23035",
+      "type": "detail"
+    },
+    {
+      "path": "./img/tab-05.jpg",
+      "id": "23493",
+      "type": "detail"
+    }
+  ],
+  "styleText":".tab-tit-box{top: 0;color:#000000;height: 8%;padding: 0;}.tab-tit-box .current{background-color: rgb(237,0,0);color: rgb(255, 255, 255);position: relative;}.tab-tit-box .current::after{position: absolute;left: 50%;bottom: -14px;margin-left: -5px;width: 0px;height: 8px;content: '';border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 6px solid rgb(237,0,0);}",
+  "switchTitBg": "./img/tab-tit-bg.jpg",
+  "curIndex": 0,
+  "countDownDay": "2018/01/11",
+  "switchTime": 0,
+  "tabImgBoxClass": "tab-img-box",
+  "tabBtnClass": "switch-item",
+  "ztTplName": "#tpl_shengdan_box",
+  "shareInfo": {
+    "title": "新年好食光，1分钱抢零食！",
+    "content": "8元无门槛礼券等你拿，快来剁手！",
+    "thumbnail": "./img/share.jpg",
+    "link": ""
+  }
+}

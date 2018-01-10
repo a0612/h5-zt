@@ -9,7 +9,8 @@ var md5 = require('gulp-md5plus');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var qnConfig = require('./qnConfig');
-var argv = require('yargs').argv
+var argv = require('yargs').argv;
+var pump = require('pump')
 
 var dir = argv.path
 
@@ -39,52 +40,65 @@ var paths = {
 }
 
 // del
-gulp.task('clean', function() {
+gulp.task('clean', function(cb) {
   return del('dist');
 });
 
 // copy
-gulp.task('copy', ['clean'], function(){
-  return gulp.src(paths.copySrc)
-    .pipe(gulp.dest(paths.dist))
+gulp.task('copy', ['clean'], function(cb){
+  return pump([
+    gulp.src(paths.copySrc),
+    gulp.dest(paths.dist)
+  ],cb)
 });
+
+// vat content = {};
+// JSON.parse(JSON.stringify(content));
 
 // 资源 md5
 gulp.task('md5', ['copy'], function(){
-  gulp.src(paths.src)
-  .pipe(md5(10, paths.quoteSrc))
-  .pipe(gulp.dest(paths.dist))
+  pump([
+    gulp.src(paths.src),
+    md5(10, paths.quoteSrc),
+    gulp.dest(paths.dist)
+  ])
 
   // var content = fs.readFileSync(paths.quoteSrc);
   // console.log(content.toString());
 });
 
 gulp.task('md5json', function(){
-  gulp.src(paths.quoteSrc)
-  .pipe($.replace(/.\/img\//g, qnOptions.origin + 'zt/' + dir + '/img/'))
-  .pipe($.rename(dir+'.json'))
-  .pipe(md5(6, null))
-  .pipe(gulp.dest(paths.dist))
+  pump([
+    gulp.src(paths.quoteSrc),
+    $.replace(/.\/img\//g, qnOptions.origin + 'zt/' + dir + '/img/'),
+    $.rename(dir+'.json'),
+    md5(6, null),
+    gulp.dest(paths.dist),
+  ])
   return del(paths.quoteSrc);
 });
 
 // 上传七牛
 gulp.task('qn', function(){
-  gulp.src([
-    paths.dist + '/**/*',
-    '!' + paths.dist + '/*.json',
+  pump([
+    gulp.src([
+      paths.dist + '/**/*',
+      '!' + paths.dist + '/*.json',
+    ]),
+    $.qndn.upload({
+      prefix: 'zt/' + dir + '/',
+      qn: qnOptions,
+    }),
+  ]);
+  pump([
+    gulp.src([
+      paths.dist + '/*.json',
+    ]),
+    $.qndn.upload({
+      prefix: 'zt/',
+      qn: qnOptions,
+    })
   ])
-  .pipe($.qndn.upload({
-    prefix: 'zt/' + dir + '/',
-    qn: qnOptions,
-  }));
-  gulp.src([
-    paths.dist + '/*.json',
-  ])
-  .pipe($.qndn.upload({
-    prefix: 'zt/',
-    qn: qnOptions,
-  }));
 });
 
 
@@ -96,3 +110,6 @@ gulp.task('default', $.shell.task([
 ], {
   cwd: './'
 }));
+
+//执行  gulp md5 --path=... 的任务队列
+//md5 copy clean
