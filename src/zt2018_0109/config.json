@@ -13,7 +13,7 @@
       ]
     },
     {
-      "template": "<div class='zt-banner'><%=data.sss%></div>",
+      "template": "<div class='zt-banner'><%=sss%></div>",
       "data":{
         "sss":"何家胜"
       }
@@ -36,8 +36,6 @@
     },
     {
       "layout_type": "column_list",
-      "layout_item_class":"layout_item_class",
-      "layout_class":"layout_class",
       "note": "商品两列布局，自动往下平铺",
       "list": [
         {

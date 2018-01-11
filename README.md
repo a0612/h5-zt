@@ -10,11 +10,11 @@ json格式要求：
 template: ...,//模板
 data: ...,//模板数据
 自定义模板用到的class用单引号引起来，不要用双引号。
-用到data里面的字段前面加data.（不知道为什么直接用不支持）
+用到data里面的字段时直接用字段名字就可以了
 
 例如：
   {
-    "template": "<div class='zt-banner'><%=data.sss%></div>",
+    "template": "<div class='zt-banner'><%=sss%></div>",
     "data":{
       "sss":"何家胜"
     }
@@ -46,11 +46,7 @@ layout_type字段用来区分用什么模板渲染数据，在好食期项目里
   {
     banner: 用来渲染banner，一列有一张图，支持跳转或者领券
     coupon: 用来渲染领券，有几列是根据list里面值的个数来判断的，有几个就是几列
-    column_list: 用来渲染商品布局，可以传入两个数据来控制列数，不传默认是两列,两个值分别是：
-                      layout_item_class,
-                      layout_class,
-      前面一个值是外面大div的class，后面一个值是每一项div的class,根据这两个值可以在 styleText 里面传入css代码覆盖原来的布局，来达到自己想要的效果。
-
+    column_list: 用来渲染商品布局，默认是两列，可以根据class来控制
     tabs: 用来渲染tab切换的模板，暂时只支持一个tab切换，每一项切换的图片可以多张。tab_list是指tab切换的日期（用‘/’隔开会在展示的时候自动替换成 “12月12日”这种样式） img_list指的是tab切换底部的图片，可以多张。
 
   }
