@@ -1,0 +1,112 @@
+{
+  "note": "五福驾到专题（专题优化发布2.0版本好食期主站json文件示例）",
+  "data": [
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-1.jpg"
+        },
+        {
+          "path": "./img/banner-2.jpg"
+        },
+        {
+          "path": "./img/banner-3.jpg",
+          "type": "coupon",
+          "id": "2018188"
+        },
+        {
+          "path": "./img/banner-4.jpg"
+        }
+      ]
+    },
+    {
+      "layout_type": "tabs",
+      "note":"tab切换",
+      "switchTitBg": "./img/tab-bg.jpg",
+      "curIndex": 0,
+      "list":{
+        "tab_list": [
+          {
+            "date":"12:00"
+          },
+          {
+            "date":"13:00"
+          },
+          {
+            "date":"14:00"
+          },
+          {
+            "date":"15:00"
+          },
+          {
+            "date":"16:00"
+          },
+          {
+            "date":"17:00"
+          }
+        ],
+        "img_list": [
+          {
+            "p_img_list": [
+              {"path": "./img/tab-1.jpg",
+                "id": "4744",
+                "type": "couple_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-2.jpg",
+                "id": "4744",
+                "type": "couple_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-3.jpg",
+                "id": "4744",
+                "type": "couple_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-4.jpg",
+                "id": "18679",
+                "type": "detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-5.jpg",
+                "id": "18679",
+                "type": "detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-6.jpg",
+                "id": "18679",
+                "type": "detail"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "type": "time",
+  "styleText": ".zt_active_style .zt-tabs .zt-tab-box .tab-btn-box{padding:0 10%;font-weight:bold;color:#fff;}.zt_active_style .zt-tab-item{display: flex;justify-content:center;align-items:center;}.zt-tab-item.current{background-image:url(./img/current-bg.png);background-size:100% 100%;background-repeat:no-repeat;color:#ed0000;}",
+  "countDownDay": "2018/1/21",
+  "switchTime": 10,
+  "shareInfo": {
+    "title": "新年好食光，1分钱抢零食！",
+    "desc": "8元无门槛礼券等你拿，快来剁手！",
+    "imgUrl": "./img/share.jpg"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "note": "9.9限时抢购，花呗用户专享（陈佳支付宝专题）",
+  "data": [
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-1.jpg"
+        },
+        {
+          "path": "./img/banner-2.jpg"
+        }
+      ]
+    },
+    {
+      "template":"<div class='ztn-column-box ztn_column-<%=desc.length%>'><img src='<%=path%>' class='ztn-column-img'><div class='column-item-box'><%desc.forEach(function(item){%><div class='column-item-<%=desc.length%>' data-type='<%=item.type%>' data-id='<%=item.id%>'></div><%})%></div></div>",
+      "note": "均分列",
+      "data": {
+        "title": "多列优惠券，column表示列数",
+        "path": "./img/details-1.jpg",
+        "desc": [
+          {
+            "type": "ali_detail",
+            "id": "1871"
+          },
+          {
+            "type": "ali_detail",
+            "id": "1872"
+          },
+          {
+            "type": "ali_detail",
+            "id": "1873"
+          }
+        ]
+      }
+    },
+    {
+      "template":"<div class='ztn-column-box ztn_column-<%=desc.length%>'><img src='<%=path%>' class='ztn-column-img'><div class='column-item-box'><%desc.forEach(function(item){%><div class='column-item-<%=desc.length%>' data-type='<%=item.type%>' data-id='<%=item.id%>'></div><%})%></div></div>",
+      "note": "均分列",
+      "data": {
+        "title": "多列优惠券，column表示列数",
+        "path": "./img/details-2.jpg",
+        "desc": [
+          {
+            "type": "ali_detail",
+            "id": "1874"
+          },
+          {
+            "type": "ali_detail",
+            "id": "1875"
+          },
+          {
+            "type": "ali_detail",
+            "id": "1876"
+          }
+        ]
+      }
+    },
+    {
+      "template":"<div class='ztn-column-box ztn_column-<%=desc.length%>'><img src='<%=path%>' class='ztn-column-img'><div class='column-item-box'><%desc.forEach(function(item){%><div class='column-item-<%=desc.length%>' data-type='<%=item.type%>' data-id='<%=item.id%>'></div><%})%></div></div>",
+      "note": "均分列",
+      "data": {
+        "title": "多列优惠券，column表示列数",
+        "path": "./img/details-3.jpg",
+        "desc": [
+          {
+            "type": "ali_detail",
+            "id": "1877"
+          },
+          {
+            "type": "ali_detail",
+            "id": "1878"
+          },
+          {
+            "type": "ali_detail",
+            "id": "1879"
+          }
+        ]
+      }
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/bottom-1.jpg"
+        }
+      ]
+    }
+  ],
+  "type": "day",
+  "styleText": ".ztn_column-3{width:100%;overflow:hidden;position:relative;}.ztn_column-3 .ztn-column-img{width:100%;display:block;}.ztn_column-3 .column-item-box{position:absolute;left:0;top:0;width:100%;height:100%;}.ztn_column-3 .column-item-2{width:50%;float:left;height:100%;}.ztn_column-3 .column-item-3{width:33.33%;float:left;height:100%;}",
+  "countDownDay": "",
+  "switchTime": 0
+}

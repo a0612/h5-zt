@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style id="styles"></style>
+  <div class="template-box">
+
+  </div>
+</body>
+<script src="https://img1.haoshiqi.net/assets/js/libs.min_139f679280.js"></script>
+<script src="./layout.js"></script>
+<script>
+$(function(){
+  // _.getUrlParam();
+  var datas = window.layouts;
+  var html = '';
+  var styles = '';
+  var titleTemp = '<h3><%=title%>布局</h3><h5><%=desc%></h5>'
+  datas.forEach(function(item,index){
+    styles += item.style;
+    if(item.name && item.desc){
+      html += _.template(titleTemp)({title:item.name,desc:item.desc})
+    }
+    html += _.template(item.template)(item.data)
+  });
+  $('#styles').html(styles);
+  $('.template-box').html(html);
+});
+</script>
+</html>

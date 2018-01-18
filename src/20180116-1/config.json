@@ -1,0 +1,102 @@
+{
+  "note": "五福驾到专题（小葵好食期专题）",
+  "data": [
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-1.jpg"
+        },
+        {
+          "path": "./img/banner-2.jpg"
+        },
+        {
+          "path": "./img/banner-3.jpg"
+        }
+      ]
+    },
+    {
+      "layout_type": "tabs",
+      "note":"tab切换",
+      "switchTitBg": "./img/tab-bg.jpg",
+      "curIndex": 0,
+      "list":{
+        "tab_list": [
+          {
+            "date":"1.17"
+          },
+          {
+            "date":"1.18"
+          },
+          {
+            "date":"1.19"
+          },
+          {
+            "date":"1.20"
+          },
+          {
+            "date":"1.21"
+          },
+          {
+            "date":"1.22"
+          }
+        ],
+        "img_list": [
+          {
+            "p_img_list": [
+              {"path": "./img/tab-1.jpg",
+                "id": "7c067a73123615a96955180a3f888e83",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-2.jpg",
+                "id": "00b1c93197afc6e582291902ef376095",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-3.jpg",
+                "id": "105c241a1628b108792d83299ba74cbb",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-4.jpg",
+                "id": "181e0e22bea007008f94fec879360e96",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-5.jpg",
+                "id": "90d3fb7a731a852a20214f8c6387a674",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-6.jpg",
+                "id": "0b31602e5db2525bfc66bb90dce2324a",
+                "type": "zt_template"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "type": "day",
+  "styleText": ".zt_active_style .zt-tabs .zt-tab-box .tab-btn-box{padding:0 10%;font-weight:bold;color:#fff;}.zt_active_style .zt-tab-item{display: flex;justify-content:center;align-items:center;}.zt-tab-item.current{background-image:url(./img/current-bg.png);background-size:100% 100%;background-repeat:no-repeat;color:#ed0000;}",
+  "countDownDay": "",
+  "switchTime": 0
+}

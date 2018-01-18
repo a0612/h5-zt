@@ -1,0 +1,113 @@
+{
+  "note": "五福驾到专题（哆啦支付宝专题）",
+  "data": [
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-1.jpg"
+        },
+        {
+          "path": "./img/banner-2.jpg"
+        },
+        {
+          "path": "./img/banner-3.jpg",
+          "type": "ali_coupon",
+          "id": 9
+        },
+        {
+          "path": "./img/banner-4.jpg"
+        }
+      ]
+    },
+    {
+      "layout_type": "tabs",
+      "note":"tab切换",
+      "switchTitBg": "./img/tab-bg.jpg",
+      "curIndex": 0,
+      "list":{
+        "tab_list": [
+          {
+            "date":"1.18"
+          },
+          {
+            "date":"1.19"
+          },
+          {
+            "date":"1.20"
+          },
+          {
+            "date":"1.21"
+          },
+          {
+            "date":"1.22"
+          },
+          {
+            "date":"1.23"
+          }
+        ],
+        "img_list": [
+          {
+            "p_img_list": [
+              {"path": "./img/tab-1.jpg",
+                "id": "1851",
+                "type": "ali_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-2.jpg",
+                "id": "1852",
+                "type": "ali_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-3.jpg",
+                "id": "1853",
+                "type": "ali_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-4.jpg",
+                "id": "1854",
+                "type": "ali_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-5.jpg",
+                "id": "1855",
+                "type": "ali_detail"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {"path": "./img/tab-6.jpg",
+                "id": "1856",
+                "type": "ali_detail"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "type": "day",
+  "styleText": ".zt_active_style .zt-tabs .zt-tab-box .tab-btn-box{padding:0 10%;font-weight:bold;color:#fff;}.zt_active_style .zt-tab-item{display: flex;justify-content:center;align-items:center;}.zt-tab-item.current{background-image:url(./img/current-bg.png);background-size:100% 100%;background-repeat:no-repeat;color:#ed0000;}",
+  "countDownDay": "",
+  "switchTime": 0
+}
+
+
+
+${desc.forEach(element => {
+  <div class="column-item-${desc.length}" data-type="${element.type}" data-id="${element.id}"></div>
+});}
