@@ -107,7 +107,3 @@
 }
 
 
-
-${desc.forEach(element => {
-  <div class="column-item-${desc.length}" data-type="${element.type}" data-id="${element.id}"></div>
-});}

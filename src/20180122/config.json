@@ -1,0 +1,288 @@
+{
+  "note": "年终扫货盛宴专题（小葵）",
+  "data": [
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-1.jpg"
+        },
+        {
+          "path": "./img/banner-2.jpg"
+        },
+        {
+          "path": "./img/banner-3.jpg"
+        }
+      ]
+    },
+    {
+      "name": "column",
+      "desc": "多列优惠券，data.desc的length表示列数",
+      "data": {
+        "path": "./img/coupon.jpg",
+        "desc": [
+          {
+            "type": "coupon",
+            "id": "xrnzsh"
+          },
+          {
+            "type": "coupon",
+            "id": "nzshzx"
+          }
+        ]
+      },
+      "template":"<div class='ztn-column-box'><img src='<%=path%>' class='zt-column-img'><div class='column-item-box'><%desc.forEach(function(item){%><div class='column-item-<%=desc.length%>' data-type='<%=item.type%>' data-id='<%=item.id%>'></div><%})%></div></div>"
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-4.jpg"
+        }
+      ]
+    },
+    {
+      "layout_type": "tabs",
+      "curIndex": 0,
+      "switchTitBg": "./img/tab-tit-bg.jpg",
+      "list": {
+        "tab_list": [
+          {
+            "date":"1.29"
+          },
+          {
+            "date":"1.30"
+          },
+          {
+            "date":"1.31"
+          },
+          {
+            "date":"更多惊喜"
+          }
+        ],
+        "img_list": [
+          {
+            "p_img_list": [
+              {
+                "path": "./img/tab-1-1.jpg",
+                "id": "8171",
+                "type": "couple_detail"
+              },
+              {
+                "path": "./img/tab-1-2.jpg",
+                "id": "8338",
+                "type": "couple_detail"
+              },
+              {
+                "path": "./img/tab-1-3.jpg",
+                "id": "6dbc02b8cfaf1597bc616957ce889110",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {
+                "path": "./img/tab-2-1.jpg",
+                "id": "8170",
+                "type": "couple_detail"
+              },
+              {
+                "path": "./img/tab-2-2.jpg",
+                "id": "8335",
+                "type": "couple_detail"
+              },
+              {
+                "path": "./img/tab-2-3.jpg",
+                "id": "96aa194afd27a3335646e273adbdc9c1",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {
+                "path": "./img/tab-3-1.jpg",
+                "id": "8164",
+                "type": "couple_detail"
+              },
+              {
+                "path": "./img/tab-3-2.jpg",
+                "id": "8344",
+                "type": "couple_detail"
+              },
+              {
+                "path": "./img/tab-3-3.jpg",
+                "id": "c6a1bb20d081abbe3f640e69ae9358ea",
+                "type": "zt_template"
+              }
+            ]
+          },
+          {
+            "p_img_list": [
+              {
+                "path": "./img/tab-4-1.jpg"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-5.jpg",
+          "path": "./img/banner-6.jpg",
+          "path": "./img/banner-7.jpg",
+          "path": "./img/banner-8.jpg"
+        }
+      ]
+    },
+    {
+      "name": "column-14",
+      "desc": "两列布局，左边(右边)一个链接，右边n个平分一列高度，flex_deirection表示列的排列方向，奇数为左边一行右边n行，偶数则相反",
+      "data": {
+        "path": [
+          "./img/column-1-1.jpg",
+          "./img/column-1-2.jpg",
+          "./img/column-1-3.jpg",
+          "./img/column-1-4.jpg"
+        ],
+        "flex_direction":1,
+        "p_left": {
+          "type": "zt_template",
+          "id": "33a9779f5cf8f093d6a8ebf50c2b744c"
+        },
+        "p_right": [
+          {
+            "type": "couple_detail",
+            "id": "8109"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8121"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8122"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8116"
+          }
+        ]
+      },
+      "template":
+      "<div class='ztn-column-1n'><div class='ztn-column1n-imgbox'><%path.forEach(function(item){%><img src='<%=item%>'><%})%></div><div class='ztn-column1n-btnbox' <%if(flex_direction%2==0){%>style='flex-direction:row-reverse'<%}%>><div class='ztn-column1n-1' data-type='<%=p_left.type%>' data-id='<%=p_left.id%>'></div><div class='ztn-column1n-n'><%p_right.forEach(function(item,index){%><div class='item' data-type='<%=item.type%>' data-id='<%=item.id%>' ></div><%})%></div></div></div>"
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-9.jpg"
+        }
+      ]
+    },
+    {
+      "name": "column-14",
+      "desc": "两列布局，左边(右边)一个链接，右边n个平分一列高度，flex_deirection表示列的排列方向，奇数为左边一行右边n行，偶数则相反",
+      "data": {
+        "path": [
+          "./img/column-2-1.jpg",
+          "./img/column-2-2.jpg",
+          "./img/column-2-3.jpg",
+          "./img/column-2-4.jpg"
+        ],
+        "flex_direction":2,
+        "p_left": {
+          "type": "zt_template",
+          "id": "82e9a32d3c73a0be04d4afb9d7933e92"
+        },
+        "p_right": [
+          {
+            "type": "couple_detail",
+            "id": "8102"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8118"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8115"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8119"
+          }
+        ]
+      },
+      "template":
+      "<div class='ztn-column-1n'><div class='ztn-column1n-imgbox'><%path.forEach(function(item){%><img src='<%=item%>'><%})%></div><div class='ztn-column1n-btnbox' <%if(flex_direction%2==0){%>style='flex-direction:row-reverse'<%}%>><div class='ztn-column1n-1' data-type='<%=p_left.type%>' data-id='<%=p_left.id%>'></div><div class='ztn-column1n-n'><%p_right.forEach(function(item,index){%><div class='item' data-type='<%=item.type%>' data-id='<%=item.id%>' ></div><%})%></div></div></div>"
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-10.jpg"
+        }
+      ]
+    },
+    {
+      "name": "column-14",
+      "desc": "两列布局，左边(右边)一个链接，右边n个平分一列高度，flex_deirection表示列的排列方向，奇数为左边一行右边n行，偶数则相反",
+      "data": {
+        "path": [
+          "./img/column-3-1.jpg",
+          "./img/column-3-2.jpg",
+          "./img/column-3-3.jpg",
+          "./img/column-3-4.jpg"
+        ],
+        "flex_direction":1,
+        "p_left": {
+          "type": "zt_template",
+          "id": "0b12e804983d8a9ea0300f4016fc6b2d"
+        },
+        "p_right": [
+          {
+            "type": "couple_detail",
+            "id": "8114"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8083"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8079"
+          },
+          {
+            "type": "couple_detail",
+            "id": "8113"
+          }
+        ]
+      },
+      "template":
+      "<div class='ztn-column-1n'><div class='ztn-column1n-imgbox'><%path.forEach(function(item){%><img src='<%=item%>'><%})%></div><div class='ztn-column1n-btnbox' <%if(flex_direction%2==0){%>style='flex-direction:row-reverse'<%}%>><div class='ztn-column1n-1' data-type='<%=p_left.type%>' data-id='<%=p_left.id%>'></div><div class='ztn-column1n-n'><%p_right.forEach(function(item,index){%><div class='item' data-type='<%=item.type%>' data-id='<%=item.id%>' ></div><%})%></div></div></div>"
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-11.jpg"
+        }
+      ]
+    }
+  ],
+  "type": "day",
+  "styleText": ".zt_active_style .zt-tabs .zt-tab-box .tab-btn-box{color:#ed0000;font-weight:bold;padding: 0 10%;font-size: 14px;}.zt-tab-item.current{background-image:url(./img/current-bg.png);background-size: 100% 100%;background-repeat:no-repeat;color:#fff;}.ztn-column-box{width:100%;overflow:hidden;position:relative;}.zt-column-img{width:100%;display:block;}.column-item-box{position:absolute;left:0;top:0;width:100%;height:100%;}.column-item-2{width:50%;float:left;height:100%;}.column-item-3{width:33.33%;float:left;height:100%;}.ztn-column-1n{position:relative;overflow:hidden;width:100%;}.ztn-column-1n .ztn-column1n-imgbox img{display:block;width:100%;}.ztn-column-1n .ztn-column1n-btnbox{position:absolute;left:0;top:0;width:100%;height:100%;display:flex;}.ztn-column1n-btnbox .ztn-column1n-1,.ztn-column1n-btnbox .ztn-column1n-n{flex:1;height:100%;display:flex;flex-direction:column;}.ztn-column1n-n .item{flex:1;}",
+  "countDownDay": "",
+  "switchTime": 0
+}

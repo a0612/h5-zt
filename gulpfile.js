@@ -10,7 +10,25 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var qnConfig = require('./qnConfig');
 var argv = require('yargs').argv;
-var pump = require('pump')
+var pump = require('pump');
+
+// var low = require('lowdb');
+// var db = low("mydb.json");
+// var table = db("mytable");
+// table.push({
+//   userName:"sss",
+//   id:"1"
+// });
+// table.push({
+//   userName:"abc",
+//   id:"2",
+// });
+// console.log(table.find({"id":"1"}));
+// table.chain().find({id:"1"}).assign({userName:"hshshs"});
+// console.log(table.find({"id":"1"}));
+// table.remove({id:"1"});
+// console.log(table.size())
+// console.log(db.object);
 
 var dir = argv.path
 
