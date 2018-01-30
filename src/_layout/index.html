@@ -78,10 +78,15 @@ $(function(){
     // $('input[type=radio][name=layout]').prop("checked",false)
     candidatesList.push(type);
     html = _.template(candidatesTemp)({list:candidatesList})
-    // candidatesList.forEach(function(item,index){
-    //   console.log(index);
-    //   console.log(item);
-    // });
+
+    if(type == 'ztn-tabs'){
+      $('.tab-btn-box .ztn-tab-item').click(function(e){
+        var target = $(e.currentTarget);
+        var index = target.data('index');
+        target.addClass('current').siblings().removeClass('current');
+        $('.switch-item .switch-item-box').hide().eq(index).show();
+      });
+    }
   });
 });
 </script>

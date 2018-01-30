@@ -70,16 +70,16 @@
       "data": {
         "list": [
           {
-            "path": "../20180117/img/bottom-1.jpg"
+            "path": "../20180122/img/banner-1.jpg"
           },
           {
-            "path": "../20180117/img/bottom-1.jpg"
+            "path": "../20180122/img/banner-2.jpg"
           },
           {
-            "path": "../20180117/img/bottom-1.jpg"
+            "path": "../20180122/img/banner-3.jpg"
           },
           {
-            "path": "../20180117/img/bottom-1.jpg"
+            "path": "../20180122/img/banner-4.jpg"
           }
         ]
       },
@@ -164,25 +164,88 @@
     {
       "name": "ztn-tabs",
       "desc": "tab切换",
-      "style": ".ztn-banner .banner-img-box img{width:100%;display:block;}",
       "data": {
-        "list": [
-          {
-            "path": "../20180117/img/bottom-1.jpg"
-          },
-          {
-            "path": "../20180117/img/bottom-1.jpg"
-          },
-          {
-            "path": "../20180117/img/bottom-1.jpg"
-          },
-          {
-            "path": "../20180117/img/bottom-1.jpg"
-          }
-        ]
+        "switchTitBg": "../20180116-1/img/tab-bg.jpg",
+        "curIndex": 0,
+        "list":{
+          "tab_list": [
+            {
+              "date":"1.17"
+            },
+            {
+              "date":"1.18"
+            },
+            {
+              "date":"1.19"
+            },
+            {
+              "date":"1.20"
+            },
+            {
+              "date":"1.21"
+            },
+            {
+              "date":"1.22"
+            }
+          ],
+          "img_list": [
+            {
+              "p_img_list": [
+                {"path": "../20180116-1/img/tab-1.jpg",
+                  "id": "7c067a73123615a96955180a3f888e83",
+                  "type": "zt_template"
+                },
+                {"path": "../20180116-1/img/tab-1.jpg",
+                  "id": "7c067a73123615a96955180a3f888e83",
+                  "type": "zt_template"
+                }
+              ]
+            },
+            {
+              "p_img_list": [
+                {"path": "../20180116-1/img/tab-2.jpg",
+                  "id": "00b1c93197afc6e582291902ef376095",
+                  "type": "zt_template"
+                }
+              ]
+            },
+            {
+              "p_img_list": [
+                {"path": "../20180116-1/img/tab-3.jpg",
+                  "id": "105c241a1628b108792d83299ba74cbb",
+                  "type": "zt_template"
+                }
+              ]
+            },
+            {
+              "p_img_list": [
+                {"path": "../20180116-1/img/tab-4.jpg",
+                  "id": "181e0e22bea007008f94fec879360e96",
+                  "type": "zt_template"
+                }
+              ]
+            },
+            {
+              "p_img_list": [
+                {"path": "../20180116-1/img/tab-5.jpg",
+                  "id": "90d3fb7a731a852a20214f8c6387a674",
+                  "type": "zt_template"
+                }
+              ]
+            },
+            {
+              "p_img_list": [
+                {"path": "../20180116-1/img/tab-6.jpg",
+                  "id": "0b31602e5db2525bfc66bb90dce2324a",
+                  "type": "zt_template"
+                }
+              ]
+            }
+          ]
+        }
       },
-      "template": `<div class='zt-tabs pr'><div class='zt-tab-box'><div class='tab-btn-box'><%var len = list.tab_list && list.tab_list.length || 1;%><%list.tab_list.forEach(function(item,index){%><div class='zt-tab-item <%if(index == curIndex){%>current<%}%>' data-type='tab' data-index='<%=index%>' data-name='tab' style='width: <%=(100/len-0.01)%>%;'><%=item.date.replace(/\//g, '月')%><%if(item.date.indexOf('/') > -1){%>日<%}%></div><%})%></div><img src='<%=switchTitBg%>' alt=' class='zt-tab-tit'></div>
-<div class='switch-item'><%list.img_list.forEach(function(item,index){%><div class='switch-item-box <%if(index == curIndex){%>current<%}%>' data-index='<%=index%>'><%item.p_img_list.forEach(function(item1){%><img src='<%=item1.path%>' alt=' class='switch-img-item' data-id='<%=item1.id%>' data-type='<%=item1.type%>' data-name='switchimg'><%})%></div><%})%></div></div>`
+      "style": ".ztn-tabs{position:relative;}.ztn-tabs img{display:block;width:100%;}.ztn-tab-box{position: relative;font-size: 14px;width: 100%;color: #cdb196;}.ztn-tab-box .tab-btn-box{color: #ed0000;font-weight: bold;font-size: 14px;position: absolute;height: 100%;width: 100%;left: 0%;top: 0;}.tab-btn-box .current{background-color: rgba(0,0,0,.5);}.ztn-tab-item{    display: inline-block;overflow: hidden;text-align: center;float: left;height: 100%;display: flex;align-items: center;justify-content: center;white-space: nowrap;}.ztn-tabs .switch-item-box{display:none;}.ztn-tabs .switch-item .current{display:block;}",
+      "template": "<div class='ztn-tabs'><div class='ztn-tab-box'><div class='tab-btn-box'><%var len = list.tab_list && list.tab_list.length || 1;%><%list.tab_list.forEach(function(item,index){%><div class='ztn-tab-item<%if(index == curIndex){%> current<%}%>' data-type='tab' data-index='<%=index%>' data-name='tab' style='width: <%=(100/len-0.01)%>%;'><%=item.date%></div><%})%></div><img src='<%=switchTitBg%>' alt='' class='ztn-tab-tit'></div><div class='switch-item'><%list.img_list.forEach(function(item,index){%><div class='switch-item-box <%if(index == curIndex){%>current<%}%>' data-index='<%=index%>'><%item.p_img_list.forEach(function(item1){%><img src='<%=item1.path%>' alt='' class='switch-img-item' data-id='<%=item1.id%>' data-type='<%=item1.type%>' data-name='switchimg'><%})%></div><%})%></div></div>"
     },
   ];
   window.layouts = datas;
