@@ -181,8 +181,8 @@
           }
         ]
       },
-      "template": `<div class='zt-tabs pr'><div class='zt-tab-box'><div class='tab-btn-box'><%var len = list.tab_list && list.tab_list.length || 1;%><%list.tab_list.forEach(function(item,index){%><div class='zt-tab-item <%if(index == curIndex){%>current<%}%>' data-type='tab' data-index='<%=index%>' data-name='tab' style='width: <%=(100/len-0.01)%>%;'><%=item.date.replace(/\//g, '月')%><%if(item.date.indexOf('/') > -1){%>日<%}%></div><%})%></div><img src='<%=switchTitBg%>' alt=' class='zt-tab-tit'></div>
-<div class='switch-item'><%list.img_list.forEach(function(item,index){%><div class='switch-item-box <%if(index == curIndex){%>current<%}%>' data-index='<%=index%>'><%item.p_img_list.forEach(function(item1){%><img src='<%=item1.path%>' alt=' class='switch-img-item' data-id='<%=item1.id%>' data-type='<%=item1.type%>' data-name='switchimg'><%})%></div><%})%></div></div>`
+      "template": `<div class='zt-tabs pr'><div class='zt-tab-box'><div class='tab-btn-box'><%var len = list.tab_list && list.tab_list.length || 1;%><%list.tab_list.forEach(function(item,index){%><div class='zt-tab-item <%if(index == curIndex){%>current<%}%>' data-type='tab' data-index='<%=index%>' data-name='tab' style='width: <%=(100/len-0.01)%>%;'><%=item.date%><%if(item.date.indexOf('/') > -1){%>日<%}%></div><%})%></div><img src='<%=switchTitBg%>' alt=' class='zt-tab-tit'></div><div class='switch-item'><%list.img_list.forEach(function(item,index){%><div class='switch-item-box <%if(index == curIndex){%>current<%}%>' data-index='<%=index%>'><%item.p_img_list.forEach(function(item1){%>
+        <img src='<%=item1.path%>' alt='' class='switch-img-item' data-id='<%=item1.id%>' data-type='<%=item1.type%>' data-name='switchimg'><%})%></div><%})%></div></div>`
     },
   ];
   window.layouts = datas;
