@@ -3,7 +3,7 @@
 (function(window){
   var datas = [
     {
-      "name": "column", // ztn-column-xxx
+      "name": "column", // ztn-column-xxx,name不能重复
       "desc": "多列优惠券，data.desc的length表示列数",
       "style": ".ztn-column-box{width:100%;overflow:hidden;position:relative;}.zt-column-img{width:100%;display:block;}.column-item-box{position:absolute;left:0;top:0;width:100%;height:100%;}.column-item-2{width:50%;float:left;height:100%;}.column-item-3{width:33.33%;float:left;height:100%;}",
       "data": {
@@ -26,7 +26,7 @@
       "template":"<div class='ztn-column-box'><img src='<%=path%>' class='zt-column-img'><div class='column-item-box'><%desc.forEach(function(item){%><div class='column-item-<%=desc.length%>' data-type='<%=item.type%>' data-id='<%=item.id%>'></div><%})%></div></div>"
     },
     {
-      "name": "column-14",
+      "name": "column-1n",
       "desc": "两列布局，左边(右边)一个链接，右边n个平分一列高度，flex_deirection表示列的排列方向，奇数为左边一行右边n行，偶数则相反",
       "style": ".ztn-column-1n{position:relative;overflow:hidden;width:100%;}.ztn-column-1n .ztn-column1n-imgbox img{display:block;width:100%;}.ztn-column-1n .ztn-column1n-btnbox{position:absolute;left:0;top:0;width:100%;height:100%;display:flex;}.ztn-column1n-btnbox .ztn-column1n-1,.ztn-column1n-btnbox .ztn-column1n-n{flex:1;height:100%;display:flex;flex-direction:column;}.ztn-column1n-n .item{flex:1;}",
       "data": {
@@ -61,7 +61,29 @@
         ]
       },
       "template":
-      "<div class='ztn-column-1n'><div class='ztn-column1n-imgbox'><%path.forEach(function(item){%><img src='<%=item%>'><%})%></div><div class='ztn-column1n-btnbox' <%if(flex_direction%2==0){%>style='flex-direction:row-reverse'<%}%>><div class='ztn-column1n-1' data-type='<%=p_left.type%>' data-id='<%=p_left.id%>' style='background-color: rgba(136,183,283,.7)'></div><div class='ztn-column1n-n'><%p_right.forEach(function(item,index){%><div class='item' data-type='<%=item.type%>' data-id='<%=item.id%>' style='background-color:<%if(index%2==0){%>rgba(0,0,0,.5)<%}else{%>rgba(212,0,89,.5)<%}%>'></div><%})%></div></div></div>.ztn-coloumn-box .ztn-row-btnbox .ztn-column .ztn-column-rows{position: relative;flex: 1;}"
+      "<div class='ztn-column-1n'><div class='ztn-column1n-imgbox'><%path.forEach(function(item){%><img src='<%=item%>'><%})%></div><div class='ztn-column1n-btnbox' <%if(flex_direction%2==0){%>style='flex-direction:row-reverse'<%}%>><div class='ztn-column1n-1' data-type='<%=p_left.type%>' data-id='<%=p_left.id%>' style='background-color: rgba(136,183,283,.7)'></div><div class='ztn-column1n-n'><%p_right.forEach(function(item,index){%><div class='item' data-type='<%=item.type%>' data-id='<%=item.id%>' style='background-color:<%if(index%2==0){%>rgba(0,0,0,.5)<%}else{%>rgba(212,0,89,.5)<%}%>'></div><%})%></div></div></div>"
+    },
+    {
+      "name": "banner",
+      "desc": "banner布局",
+      "style": ".ztn-banner .banner-img-box img{width:100%;display:block;}",
+      "data": {
+        "list": [
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          },
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          },
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          },
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          }
+        ]
+      },
+      "template": "<div class='ztn-banner'><%list.forEach(function(item,index){%><div class='banner-img-box pr' data-name='banner' data-id='<%=item.id%>' data-type='<%=item.type%>' data-index='<%=index%>'><img src='<%=item.path%>' alt=' class='ztn-banner-item'></div><%})%></div>"
     },
     {
       "name": "column-122",
@@ -138,6 +160,29 @@
         ],
       },
       "template":"<div class='ztn-coloumn-box'><div class='ztn-coloumnbox-imgbox'><%path.forEach(function(item){%><img src='<%=item%>'><%})%></div><div class='ztn-row-btnbox' <%if(flex_direction %2==0){%>style='flex-direction: row-reverse'<%}%>><%btns.forEach(function(item, index){%><div class='ztn-column' style='background:<%if(index%2==0){%>red<%}else{%>blue<%}%>'><%item.list.forEach(function(item, index){%><div class='ztn-column-rows' data-type='<%=item.type%>' data-id='<%=item.id%>' style='background:<%if(index%2==0){%>yellow<%}else{%>black<%}%>'></div><%})%></div><%})%></div></div>"
+    },
+    {
+      "name": "ztn-tabs",
+      "desc": "tab切换",
+      "style": ".ztn-banner .banner-img-box img{width:100%;display:block;}",
+      "data": {
+        "list": [
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          },
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          },
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          },
+          {
+            "path": "../20180117/img/bottom-1.jpg"
+          }
+        ]
+      },
+      "template": `<div class='zt-tabs pr'><div class='zt-tab-box'><div class='tab-btn-box'><%var len = list.tab_list && list.tab_list.length || 1;%><%list.tab_list.forEach(function(item,index){%><div class='zt-tab-item <%if(index == curIndex){%>current<%}%>' data-type='tab' data-index='<%=index%>' data-name='tab' style='width: <%=(100/len-0.01)%>%;'><%=item.date.replace(/\//g, '月')%><%if(item.date.indexOf('/') > -1){%>日<%}%></div><%})%></div><img src='<%=switchTitBg%>' alt=' class='zt-tab-tit'></div>
+<div class='switch-item'><%list.img_list.forEach(function(item,index){%><div class='switch-item-box <%if(index == curIndex){%>current<%}%>' data-index='<%=index%>'><%item.p_img_list.forEach(function(item1){%><img src='<%=item1.path%>' alt=' class='switch-img-item' data-id='<%=item1.id%>' data-type='<%=item1.type%>' data-name='switchimg'><%})%></div><%})%></div></div>`
     },
   ];
   window.layouts = datas;

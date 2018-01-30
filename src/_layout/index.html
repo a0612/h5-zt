@@ -4,12 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>专题预览</title>
 </head>
 <body>
   <style id="styles"></style>
-  <div class="template-box">
+  <div class="layout-page">
+    <div class="layout-tit">
 
+    </div>
+    <div class="candidates-list">
+
+    </div>
+    <div class="template-box">
+
+    </div>
   </div>
 </body>
 <script src="https://img1.haoshiqi.net/assets/js/libs.min_139f679280.js"></script>
@@ -20,17 +28,61 @@ $(function(){
   var datas = window.layouts;
   var html = '';
   var styles = '';
-  var
-  var titleTemp = '<h3><%=title%>布局</h3><h5><%=desc%></h5>'
+  //样式模板
+  var stylesTemp = '*{margin:0;padding:0;}.layout-page{    padding: 15px 50px 100px 15px;display:flex;}.layout-tit{flex:1;min-width:150px;}.template-box{flex:1;}.title{color:#ed0000;}<%=styles%>';
+  var dataList = new Array(0);
+  var listTemp = new Array(0);
+  //最左侧标题选择模板
+  var directoryTemp = '<h4 class="title">标题选择</h4><%for(var key in dataList){%><div class="tit-box" data-type="<%=key%>"><%=key%>布局</div><%}%>';
+
+  //候选列表模板
+  var candidatesTemp = '<h4 class="title">候选列表</h4><%list.forEach(function(item){%><div class="tit-box" data-type="<%=item%>"><%=item%>布局</div><%})%>';
+  var candidatesList = new Array(0);
+
   datas.forEach(function(item,index){
     styles += item.style;
-    if(item.name && item.desc){
-      html += _.template(titleTemp)({title:item.name,desc:item.desc})
+
+    //把title存到data里面
+    if(item.desc){
+      item.data.title = item.desc;
     }
-    html += _.template(item.template)(item.data)
+
+    //把每个数据的name作为数组的key，把数据的data存到里面
+    dataList[item.name] = item.data;
+    dataList.length++;
+
+    //把每个数据的name作为数组的key，把数据的template存到里面
+    listTemp[item.name] = item.template;
+    listTemp.length++;
   });
-  $('#styles').html(styles);
-  $('.template-box').html(html);
+  // 渲染cssc
+  html = _.template(stylesTemp)({styles,})
+  $('#styles').html(html);
+  html = '';
+
+  // 渲染左侧单选栏
+  if(dataList.length > 0){
+    html += _.template(directoryTemp)({dataList: dataList})
+  }
+  $('.layout-tit').html(html);
+
+  // 点击按钮渲染右侧预览
+  $('.tit-box').click(function(e){
+    var target = $(e.currentTarget);
+    var type = target.data('type');
+    var titleTemp = '<h5><%=title%></h5>';
+    var title = _.template(titleTemp)(dataList[type]);
+    $('.template-box').html(title);
+    html = _.template(listTemp[type])(dataList[type]);
+    $('.template-box').append(html);
+    // $('input[type=radio][name=layout]').prop("checked",false)
+    candidatesList.push(type);
+    html = _.template(candidatesTemp)({list:candidatesList})
+    // candidatesList.forEach(function(item,index){
+    //   console.log(index);
+    //   console.log(item);
+    // });
+  });
 });
 </script>
 </html>
