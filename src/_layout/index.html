@@ -12,32 +12,40 @@
     <div class="layout-tit">
 
     </div>
-    <div class="candidates-list">
-
+    <div class="prep-list">
     </div>
     <div class="template-box">
 
     </div>
   </div>
+  <div class="copyBtn" id="copyBtn" data-clipboard-text=""><span>复制</span></div>
 </body>
+<script src="./clipboard.min.js"></script>
 <script src="https://img1.haoshiqi.net/assets/js/libs.min_139f679280.js"></script>
 <script src="./layout.js"></script>
 <script>
+// 第二栏预选列表模板和数据数组
+var prepTemp = '<h4 class="title">预选列表</h4><%dataList.forEach(function(item,index){%><div class="tit-box" data-type="<%=item%>"><%=item%><img src="./img/close.png" class="delete" data-type="<%=index%>"></div><%})%>';
+
+var prepList = new Array(0);
+var listTemp = new Array(0);
+var dataList = new Array(0);
+
+var datas = window.layouts;
 $(function(){
+
   // _.getUrlParam();
-  var datas = window.layouts;
+  var me = this;
   var html = '';
   var styles = '';
   //样式模板
-  var stylesTemp = '*{margin:0;padding:0;}.layout-page{    padding: 15px 50px 100px 15px;display:flex;}.layout-tit{flex:1;min-width:150px;}.template-box{flex:1;}.title{color:#ed0000;}<%=styles%>';
-  var dataList = new Array(0);
-  var listTemp = new Array(0);
-  //最左侧标题选择模板
-  var directoryTemp = '<h4 class="title">标题选择</h4><%for(var key in dataList){%><div class="tit-box" data-type="<%=key%>"><%=key%>布局</div><%}%>';
+  var stylesTemp = 'html,body{height:100%;width:100%;}*{margin:0;padding:0;}.copyBtn{position:fixed;right:10px;bottom:10px;border-radius:100px;background-color:rgba(4,190,2,.5);width: 50px;height: 50px;text-align: center;line-height: 50px;font-size: 14px;color: #fff;}.layout-page{height:100%;}.layout-tit{overflow-y: scroll;height:100%;float:left;min-width:140px;background-color: #fafaf8;}.template-box{overflow:scroll;height:100%;max-width:320px;text-align:center;padding:0 15px;}.template-box h5{margin:15px 0;}.title{text-align:center;margin-top: 15px;}.layout-tit .tit-box{position:relative;width:100%;height:60px;color:#212121;font-size:14px;line-height:60px;text-align:center;}.tit-box .checked{width:16px;height:16px;position:absolute;top:22px;right:3px;}.layout-tit .current{background-color: rgba(0,0,0,.5);color: #fff;border-bottom-left-radius: 15px;border-top-left-radius: 15px;}.prep-list{overflow-y: scroll;width:140px;float:left;height:100%;background-color:rgba(0,0,0,.5);}.prep-list .tit-box{position: relative;width: 100%;height: 40px;color: #212121;font-size: 14px;line-height: 40px;text-align: center;}.tit-box .delete{position:absolute;top:11px;right:3px;width:18px;height:18px;}<%=styles%>';
 
-  //候选列表模板
-  var candidatesTemp = '<h4 class="title">候选列表</h4><%list.forEach(function(item){%><div class="tit-box" data-type="<%=item%>"><%=item%>布局</div><%})%>';
-  var candidatesList = new Array(0);
+
+  //最左侧标题选择模板
+  var directoryTemp = '<h4 class="title">标题选择</h4><%for(var key in dataList){%><div class="tit-box" data-type="<%=key%>"><%=key%><img src="./img/selected.png" class="checked" data-type="<%=key%>"></div><%}%>';
+
+  var copyBtn = document.getElementById('copyBtn');
 
   datas.forEach(function(item,index){
     styles += item.style;
@@ -55,7 +63,7 @@ $(function(){
     listTemp[item.name] = item.template;
     listTemp.length++;
   });
-  // 渲染cssc
+  // 渲染css
   html = _.template(stylesTemp)({styles,})
   $('#styles').html(html);
   html = '';
@@ -66,28 +74,94 @@ $(function(){
   }
   $('.layout-tit').html(html);
 
+  html = _.template(prepTemp)({dataList:[]});
+  $('.prep-list').html(html);
+
+
+
+  // 复制
+  var clipboard = new Clipboard(copyBtn);
+
+  //复制成功执行的回调，可选
+  clipboard.on('success', function(e) {
+      console.log(e);
+  });
+
+  //复制失败执行的回调，可选
+  clipboard.on('error', function(e) {
+      console.log(e);
+  });
+
+
+
+
   // 点击按钮渲染右侧预览
-  $('.tit-box').click(function(e){
+  $('.layout-tit .tit-box').click(function(e){
     var target = $(e.currentTarget);
     var type = target.data('type');
+    target.addClass('current').siblings().removeClass('current');
     var titleTemp = '<h5><%=title%></h5>';
     var title = _.template(titleTemp)(dataList[type]);
     $('.template-box').html(title);
-    html = _.template(listTemp[type])(dataList[type]);
-    $('.template-box').append(html);
-    // $('input[type=radio][name=layout]').prop("checked",false)
-    candidatesList.push(type);
-    html = _.template(candidatesTemp)({list:candidatesList})
-
-    if(type == 'ztn-tabs'){
-      $('.tab-btn-box .ztn-tab-item').click(function(e){
-        var target = $(e.currentTarget);
-        var index = target.data('index');
-        target.addClass('current').siblings().removeClass('current');
-        $('.switch-item .switch-item-box').hide().eq(index).show();
-      });
-    }
+    var typeList = [];
+    typeList.push(type);
+    me.renderList(listTemp,dataList,typeList);
+  });
+  // 勾选
+  $('.layout-tit .checked').click(function(e){
+    var target = $(e.currentTarget);
+    var type = target.data('type');
+    prepList.push(type);
+    me.updataPrepList(prepList);
+    html = _.template(prepTemp)({dataList:prepList});
+    $('.prep-list').html(html);
+    me.renderList(listTemp,dataList,prepList);
+    e.stopPropagation();
   });
 });
+function renderList(listTemp,dataList,typeList){
+  var me = this;
+  html = '';
+  typeList.forEach(function(item){
+    html += _.template(listTemp[item])(dataList[item]);
+  })
+  $('.template-box').html(html);
+
+  // 监听tab切换(点击一个切换全部)
+  $('.tab-btn-box .ztn-tab-item').click(function(e){
+    var target = $(e.currentTarget);
+    var index = target.data('index');
+    target.addClass('current').siblings().removeClass('current');
+    $('.switch-item .switch-item-box').hide().eq(index).show();
+  });
+
+  $('.prep-list .delete').click(function(e){
+    me.deletePrep(e);
+  });
+}
+function updataPrepList(prepList){
+  var $domCopyBtn = $('.copyBtn');
+  var prepDataList = [];
+  prepList.forEach(function(item){
+    for(var i=0;i<datas.length;i++){
+      if(item == datas[i].name){
+        prepDataList.push(datas[i]);
+        break;
+      }
+    }
+  })
+  $domCopyBtn.attr('data-clipboard-text',window.JSON.stringify(prepDataList));
+}
+// 取消勾选
+function deletePrep(e){
+  var target = $(e.currentTarget);
+  var type = target.data('type');
+  prepList.splice(type,1);
+  this.updataPrepList(prepList);
+  html = _.template(prepTemp)({dataList:prepList});
+  $('.prep-list').html(html);
+  this.renderList(listTemp,dataList,prepList);
+  e.stopPropagation();
+}
 </script>
 </html>
