@@ -203,7 +203,7 @@ gulp.task('default', $.shell.task([
 //执行  gulp md5 --path=... 的任务队列
 //md5 copy clean
 
-var css = 'body {display: flex;}'
+var css = 'body {display: flex;}';
 gulp.task('test', function(cb) {
   var result = cssStringAutoprefixer(css);
   console.log(result);

@@ -1,0 +1,35 @@
+{
+  "name": "h5-zt",
+  "version": "1.0.0",
+  "description": "实现一个简版专题发布系统",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.iqianggou.com:h5/h5-zt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "browser-sync": "^2.21.0",
+    "clipboard": "^1.7.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-json-editor": "^2.2.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-md5plus": "^1.0.4",
+    "gulp-qndn": "0.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-shell": "^0.6.3",
+    "low": "0.0.1",
+    "lowdb": "^1.0.0",
+    "postcss": "^6.0.19",
+    "pump": "^2.0.0",
+    "run-sequence": "^2.2.0",
+    "yargs": "^10.0.3"
+  }
+}
