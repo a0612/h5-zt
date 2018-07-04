@@ -188,7 +188,6 @@ gulp.task('qn', function(){
   ])
 });
 
-
 // 指定一个新的 cwd (当前工作目录)
 gulp.task('default', $.shell.task([
   'gulp copy --path=' + dir,
@@ -196,6 +195,7 @@ gulp.task('default', $.shell.task([
   'gulp md5 --path=' + dir,
   'gulp md5json --path=' + dir,
   'gulp qn --path=' + dir,
+  'node ./log.js --path=' + dir,
 ], {
   cwd: './'
 }));
