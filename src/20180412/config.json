@@ -1,0 +1,85 @@
+{
+  "note": "花呗活动",
+  "lottery_type": "huabei_02",
+  "data": [
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-1.jpg"
+        }
+      ]
+    },
+    {
+      "name": "ztn-lottery-box",
+      "desc": "抽奖区域",
+      "style": ".ztn-lottery-box{width: 100%;overflow: hidden;position: relative;}.ztn-rule-img{width:100%;display:block}.ztn-lottery-content{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}.ztn-lottery-list{width: 86%;height: 92%;margin: 3.5% 7%;}.ztn-lottery-item{width: 31.33%;height: 31.33%;margin: 1%;float: left;background-color: #e4e4e4;border-radius: 16%;}.ztn-item-image{width:90%;margin-top:3%;}.ztn-lottery-btn{width:100%;height:100%;}.ztn-item-box{width: 100%;height: 94%;display: flex;justify-content: center;align-items: center;background-color: #f8f2ff;border-radius: 16%;}.hei-100{height:100%;} .hei-100>img{margin-top:0;}.get-num-disabled{background-color:#d2d2d2;}",
+      "data": {
+        "bg_path": [
+          "./img/lottery-bg.jpg"
+        ],
+        "lottery_list": [
+          {
+            "path": "./img/lottery-1.png"
+          },
+          {
+            "path": "./img/lottery-2.png"
+          },
+          {
+            "path": "./img/lottery-3.png"
+          },
+          {
+            "path": "./img/lottery-4.png"
+          },
+          {
+            "path": "./img/lottery-btn-active.png",
+            "type": "creatOrder",
+            "id": "creat_1"
+          },
+          {
+            "path": "./img/lottery-5.png"
+          },
+          {
+            "path": "./img/lottery-6.png"
+          },
+          {
+            "path": "./img/lottery-7.png"
+          },
+          {
+            "path": "./img/lottery-8.png"
+          }
+        ]
+      },
+      "template":"<div class='ztn-mask'></div><div class='ztn-lottery-box'><img src='<%=bg_path%>' class='ztn-rule-img'><div class='ztn-lottery-content'><div class='ztn-lottery-list'><%lottery_list.forEach(function(item,index){%><div class='ztn-lottery-item <%if(index != 4){%>ztn-lotterys<%}%>' <%if(item.type){%>type='<%=item.type%>' id='<%=item.id%>'<%}%>><div class='ztn-item-box <%if(index == 4){%>hei-100<%}%>' <%if(item.type){%>data-type='<%=item.type%>' data-id='<%=item.id%>'<%}%>><img src='<%=item.path%>' class='ztn-item-image <%if(index == 4){%>ztn-lottery-btn<%}%>'></div></div><%})%></div></div></div>"
+    },
+    {
+      "name": "ztn-rule-btn",
+      "desc": "在一块区域内有一个或多个小小的按钮在其中,包括弹层的样式",
+      "style": ".ztn-rule-box{position:relative;width:100%;}.ztn-rule-box .ztn-rule-img{width:100%;display:block;}.ztn-rule-box .ztn-rule-btn{position: absolute;left: 31%;top: 75%;width: 18%;height: 10%;}",
+      "data": {
+        "path": "./img/banner-2.jpg",
+        "desc":{
+          "type": "getOrderList",
+          "id": "order"
+        }
+      },
+      "template":"<div class='ztn-rule-box'><img src='<%=path%>' class='ztn-rule-img'><div class='ztn-rule-btn' data-type='<%=desc.type%>' data-id='<%=desc.id%>'></div></div>"
+    },
+    {
+      "layout_type": "banner",
+      "note": "banner布局",
+      "list": [
+        {
+          "path": "./img/banner-3.jpg",
+          "id": "d6b3522638cb053d74a25aab21435194",
+          "type": "ali_zt"
+        }
+      ]
+    }
+  ],
+  "type": "day",
+  "countDownDay": "",
+  "switchTime": 0,
+  "style": ".ztn-show-tip-box{height: 100%;overflow: hidden;}.ztn-show-tip-box img{width:100%;height:100%;}.ztn-tip-box{height:100%;position:relative;}.ztn-show-tip-box img{height:100%;}.ztn-tip-box .cancel{position: absolute;right: 0;top: 5%;width: 12%;height: 7%;}.ztn-tip-content{position:absolute;top: 57.5%;left: 11%;width: 79%;height: 25%;}.ztn-tip-coffee{height:20%;}.ztn-order-mask{z-index:2000;content: '';position: absolute;bottom: -25px;left: 0;width: 100%;height: 20px;box-shadow: 0px -15px 15px 5px #fff;}.ztn-lottery-scroll{height: 100%;width: 100%;overflow-y: scroll;padding-bottom: 21px;}.ztn-tip-content .ztn-input-tel{border: none;width: 100%;text-align: center;height: 30%;border-radius: 5px;margin-bottom: 2%;}.ztn-get-codebox{margin-bottom: 2%;overflow: hidden;height: 28%;width: 100%;}.ztn-tip-content .ztn-input-code{border: none;width: 65%;text-align: center;height: 100%;border-radius: 5px;margin-right: 5%;float: left;}.ztn-get-code{float: left;width: 30%;height: 100%;background-color: #fee53c;border-radius: 6px;text-align: center;font-size: 12px;display: flex;flex-direction: column;justify-content: center;}.ztn-receive-btn{width: 100%;height: 30%;text-align: center;display: flex;flex-direction: column;justify-content: center;background-color: #fee53c;border-radius: 5px;color: #ed0000;font-weight: bold;font-size: 16px;}.ztn-coupon-desc{margin-bottom: 5%;height: 50%;display: flex;justify-content: center;color: #6d1398;}.ztn-coupon-desc .ztn-coupon-price{float: left;font-size: 77px;font-weight: 500;}.ztn-coupon-desc .ztn-coupon-box{float: left;display: flex;flex-direction: column-reverse;}.ztn-coupon-box .ztn-coupon-text{    font-size: 16px;font-weight: bold;margin-bottom: -6px;}.ztn-coupon-box .ztn-coupon-condition{font-size: 15px;}.ztn-go-use,.ztn-add-package{width: 60%;height: 20%;margin-left: 20%;background-color: #fff;border-radius: 1000px;text-align: center;color: #6d1398;font-weight: bold;font-size: 15px;display: flex;justify-content: center;flex-direction: column;margin-bottom: 3%;}.ztn-tip-content .ztn-none-order{width: 100%;height: auto;margin-top: 5%;}.ztn-get-codebox .disabled{background-color:#d2d2d2;}.ztn-tip-sure-box{position:relative;display:none;}.ztn-tip-sure-box .ztn-sure-btn{position: absolute;left: 28%;bottom: 33%;height: 5%;width: 44%;}.ztn-lottery-order{overflow:hidden;margin-bottom: 1%;}.ztn-lottery-order .ztn-order-tit{float:left;font-weight: 600;}.ztn-lottery-order .ztn-order-creatat{float:right;margin-right: 4%;}.ztn-mask{display:none;position:fixed;left:0;top:0;height:100%;width:100%;z-index:1001;}.ztn-lottery-list>.ztn-active{background-color:#c6acee}.ztn-active>.ztn-item-box{background-color: #e3d1fe;}"
+}

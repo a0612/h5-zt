@@ -247,6 +247,48 @@
       "style": ".ztn-tabs{position:relative;}.ztn-tabs img{display:block;width:100%;}.ztn-tab-box{position: relative;font-size: 14px;width: 100%;color: #cdb196;}.ztn-tab-box .tab-btn-box{color: #ed0000;font-weight: bold;font-size: 14px;position: absolute;height: 100%;width: 100%;left: 0%;top: 0;}.tab-btn-box .current{background-color: rgba(0,0,0,.5);}.ztn-tab-item{    display: inline-block;overflow: hidden;text-align: center;float: left;height: 100%;display: flex;align-items: center;justify-content: center;white-space: nowrap;}.ztn-tabs .switch-item-box{display:none;}.ztn-tabs .switch-item .current{display:block;}",
       "template": "<div class='ztn-tabs'><div class='ztn-tab-box'><div class='tab-btn-box'><%var len = list.tab_list && list.tab_list.length || 1;%><%list.tab_list.forEach(function(item,index){%><div class='ztn-tab-item<%if(index == curIndex){%> current<%}%>' data-type='tab' data-index='<%=index%>' data-name='tab' style='width: <%=(100/len-0.01)%>%;'><%=item.date%></div><%})%></div><img src='<%=switchTitBg%>' alt='' class='ztn-tab-tit'></div><div class='switch-item'><%list.img_list.forEach(function(item,index){%><div class='switch-item-box <%if(index == curIndex){%>current<%}%>' data-index='<%=index%>'><%item.p_img_list.forEach(function(item1){%><img src='<%=item1.path%>' alt='' class='switch-img-item' data-id='<%=item1.id%>' data-type='<%=item1.type%>' data-name='switchimg'><%})%></div><%})%></div></div>"
     },
+    {
+      "name": "ztn-lottery-box",
+      "desc": "抽奖区域",
+      "style": ".ztn-lottery-box{width: 100%;overflow: hidden;position: relative;}.ztn-rule-img{width:100%;display:block}.ztn-lottery-content{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}.ztn-lottery-list{width: 86%;height: 92%;margin: 3.5% 7%;}.ztn-lottery-item{width: 31.33%;height: 31.33%;margin: 1%;float: left;background-color: #e4e4e4;border-radius: 16%;}.ztn-item-image{width:90%;margin-top:3%;}.ztn-lottery-btn{width:100%;height:100%;}.ztn-item-box{width: 100%;height: 94%;display: flex;justify-content: center;align-items: center;background-color: #f8f2ff;border-radius: 16%;}.hei-100{height:100%;} .hei-100>img{margin-top:0;}",
+      "data": {
+        "bg_path": [
+          "../zt2018_0412/img/lottery-bg.jpg"
+        ],
+        "lottery_list": [
+          {
+            "path": '../zt2018_0412/img/lottery-1.png'
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-2.png'
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-3.png'
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-4.png'
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-btn-active.png',
+            "type": 'creatOrder',
+            "id": "creat_1"
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-5.png'
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-6.png'
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-7.png'
+          },
+          {
+            "path": '../zt2018_0412/img/lottery-8.png'
+          },
+        ]
+      },
+      "template":"<div class='ztn-mask'></div><div class='ztn-lottery-box'><img src='<%=bg_path%>' class='ztn-rule-img'><div class='ztn-lottery-content'><div class='ztn-lottery-list'><%lottery_list.forEach(function(item,index){%><div class='ztn-lottery-item <%if(index != 4){%>ztn-lotterys<%}%>' <%if(item.type){%>type='<%=item.type%>' id='<%=item.id%>'<%}%>><div class='ztn-item-box <%if(index == 4){%>hei-100<%}%>'><img src='<%=item.path%>' class='ztn-item-image <%if(index == 4){%>ztn-lottery-btn<%}%>'></div></div><%})%></div></div></div>"
+    }
   ];
   window.layouts = datas;
 })(window);
